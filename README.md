@@ -17,4 +17,4 @@ The design documentation is to be detailed as an end of course project for the "
 ## Spent Time
 | Hours | Tasks |
 | :---: | :---: |
-| 5 | Preparing project and initial documentation |
+| 6 | Preparing project and initial documentation |
