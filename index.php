@@ -4,6 +4,14 @@ $app = new \Slim\Slim();
 // define settings
 $app->config('debug', true);
 
+// Use Plates when rendering
+$app->view(
+    new Slim\Views\Plates(function (League\Plates\Engine $engine) use ($app) {
+        $engine->loadExtension(new League\Plates\Extension\URI($app->request()->getPathInfo()));
+        $engine->loadExtension(new Slim\Views\PlatesExtension);
+    })
+);
+
 $app->get('/', function(){
     echo "Home Page<br>".
 		 "<a href='hello/ossi'>linkki</a>";
@@ -14,8 +22,9 @@ $app->get('/', function(){
 	sqlResult2Html($stmt);
 }); 
 
-$app->get('/hello/:name', function ($name) {
-    echo "Hello, $name";
+$app->get('/hello/:name', function ($name) use ($app) {
+    //echo "Hello, $name";
+	$app->render('hello', array('name' => $name));
 });
 
 $app->run();

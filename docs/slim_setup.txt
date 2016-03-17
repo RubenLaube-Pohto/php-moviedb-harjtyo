@@ -1,6 +1,0 @@
-# install slim 2.0
-# requires php 5.3.0
-
-# download to project folder and install
-wget https://getcomposer.org/composer.phar
-php composer.phar require slim/slim:~2.0
