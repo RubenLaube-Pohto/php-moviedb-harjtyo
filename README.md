@@ -1,6 +1,6 @@
 # Movie DB Interface in PHP
 
-Available at: http://student.labranet.jamk.fi/~H8871/www/palvelinohjelmointi/php-moviedb-harjtyo/
+Available at: http://student.labranet.jamk.fi/~H8871/www/palvelinohjelmointi/php-moviedb-harjtyo
 
 [Introduction](#introduction)  
 [Requirements](#requirements)  
@@ -52,7 +52,8 @@ On the school servers short tags are not enabled by default. This can be changed
 | 15.03.2016 | 6 | Preparing project and initial documentation |
 | 16.03.2016 | 6 | Get Plates working |
 | 17.03.2016 | 1 | Work on documentation |
-| Total hours: | 13 |  |
+| 23.03.2016 | 1 | Work on design docs |
+| Total hours: | 14 |  |
 
 [1]: http://php.net/manual/en/ini.core.php#ini.short-open-tag
 [2]: http://stackoverflow.com/questions/742764/php-syntax-for-dereferencing-function-result
