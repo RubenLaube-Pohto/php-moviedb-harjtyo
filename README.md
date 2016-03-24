@@ -53,8 +53,8 @@ On the school servers short tags are not enabled by default. This can be changed
 | 16.03.2016 | 6 | Get Plates working |
 | 17.03.2016 | 1 | Work on documentation |
 | 23.03.2016 | 1 | Work on design docs |
-| 24.03.2016 | 2 | Work on design docs |
-| Total hours: | 16 |  |
+| 24.03.2016 | 5 | Work on design docs |
+| Total hours: | 19 |  |
 
 [1]: http://php.net/manual/en/ini.core.php#ini.short-open-tag
 [2]: http://stackoverflow.com/questions/742764/php-syntax-for-dereferencing-function-result
