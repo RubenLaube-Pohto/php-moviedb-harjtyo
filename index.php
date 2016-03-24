@@ -1,4 +1,5 @@
 <?php
+// Init Slim
 require 'vendor/autoload.php';
 $app = new \Slim\Slim();
 // define settings
@@ -12,7 +13,7 @@ $app->view(
     })
 );
 
-$app->get('/', function(){
+$app->get('/', function() {
     echo "Home Page<br>".
 		 "<a href='hello/ossi'>linkki</a>";
 	// Connect to database
@@ -22,7 +23,7 @@ $app->get('/', function(){
 	sqlResult2Html($stmt);
 }); 
 
-$app->get('/hello/:name', function ($name) use ($app) {
+$app->get('/hello/:name/', function ($name) use ($app) {
     //echo "Hello, $name";
 	$app->render('hello', array('name' => $name));
 });
