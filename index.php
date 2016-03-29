@@ -44,6 +44,18 @@ $app->post('/movies/new', function() use ($app) {
     $app->redirect($app->urlFor('movies'));
 });
 
+$app->get('/movies/:id', function($id) use ($app) {
+    $conn = new MySQLConnection();
+    $movie = $conn->getMovie($id);
+    $app->render('edit_movie', array('movie' => $movie));
+});
+
+$app->delete('/movies/:id', function($id) use ($app) {
+    $conn = new MySQLConnection();
+    $movie = $conn->deleteMovie($id);
+    $app->redirect($app->urlFor('movies'));
+});
+
 $app->get('/hello/:name/', function ($name) use ($app) {
     //echo "Hello, $name";
     $app->render('hello', array('name' => $name));

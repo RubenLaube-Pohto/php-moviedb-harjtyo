@@ -13,6 +13,7 @@
     <td><?php echo $movie->id ?></td>
     <td><?php echo $movie->title ?></td>
     <td><?php echo $movie->year ?></td>
+    <td><a href='movies/<?php echo $movie->id ?>'>edit</a></td>
   </tr>
   <?php endforeach ?>
 </table>

@@ -21,7 +21,18 @@ class MySQLConnection implements iDatabaseConnection {
     }
 
     public function getMovie($movie_id) {
-
+        $sql = "SELECT * FROM movie WHERE id='$movie_id'";
+        $stmt = $this->db->query($sql);
+        $movie = NULL;
+        if ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
+            $movie = new Movie();
+            $movie->id = $row['id'];
+            $movie->title = $row['title'];
+            $movie->year = $row['year'];
+            $movie->duration = $row['duration'];
+            $movie->isan = $row['isan'];
+        }
+        return $movie;
     }
 
     public function getPerson($person_id) {
@@ -77,7 +88,8 @@ class MySQLConnection implements iDatabaseConnection {
     }
 
     public function deleteMovie($movie_id) {
-
+        $sql = "DELETE FROM movie WHERE id='$movie_id'";
+        $this->db->exec($sql);
     }
 
     public function deletePerson($person_id) {
