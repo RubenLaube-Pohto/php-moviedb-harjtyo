@@ -33,7 +33,10 @@ class MySQLConnection implements iDatabaseConnection {
 			$sql = "SELECT id, title, year FROM movie";
 			$stmt = $this->db->query($sql);
 			while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
-				$movie = new Movie($row['id'], $row['title'], $row['year']);
+				$movie = new Movie();
+				$movie->id = $row['id'];
+				$movie->title = $row['title'];
+				$movie->year = $row['year'];
 				$movies[] = $movie;
 			}
 		}
