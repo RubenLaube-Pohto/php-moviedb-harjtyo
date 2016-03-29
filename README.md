@@ -45,6 +45,15 @@ It was new to me that you could use `<?= ?>` as a short version of `<?php echo ?
 
 On the school servers short tags are not enabled by default. This can be changed in the php.ini-file by setting `short_open_tag: On`.
 
+### PUT and DELETE requests
+
+Many browsers don't support PUT or DELETE requests. The functionality can be provided by Slim if you set form method to POST and add a hidden input tag with method override.
+
+    <form method='post'>
+        <input type="hidden" name="_METHOD" value="PUT">
+		OR
+        <input type="hidden" name="_METHOD" value="DELETE">
+
 ## Spent Time
 
 | Date | Hours | Tasks |
@@ -55,8 +64,8 @@ On the school servers short tags are not enabled by default. This can be changed
 | 23.03.2016 | 1 | Work on design docs |
 | 24.03.2016 | 5 | Work on design docs |
 | 28.03.2016 | 4 | Implement classes |
-| 29.03.2016 | 2 | Implement basic ability to add movies |
-| Total hours: | 25 |  |
+| 29.03.2016 | 4 | Implement basic functionality |
+| Total hours: | 27 |  |
 
 [1]: http://php.net/manual/en/ini.core.php#ini.short-open-tag
 [2]: http://stackoverflow.com/questions/742764/php-syntax-for-dereferencing-function-result
