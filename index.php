@@ -14,16 +14,35 @@ $app->view(
 );
 
 require_once 'mysqlconn.php';
+require_once 'movie.php';
 
 $app->get('/', function() use ($app) {
     $app->redirect($app->urlFor('movies'));
-}); 
+});
 
 $app->get('/movies', function() use ($app) {
     $conn = new MySQLConnection();
     $movies = $conn->getMovies();
     $app->render('movies', array('movies' => $movies));
-})->name('movies'); 
+})->name('movies');
+
+$app->get('/movies/new', function() use ($app) {
+    $app->render('add_movie');
+});
+
+$app->post('/movies/new', function() use ($app) {
+    $post = $app->request->post();
+    $conn = new MySQLConnection();
+    $movie = new Movie();
+    $movie->title = $post['title'];
+    $movie->year = $post['year'];
+    if ($post['duration'])
+        $movie->duration = $post['duration'];
+    if ($post['isan'])
+        $movie->isan = $post['isan'];
+    $conn->addMovie($movie);
+    $app->redirect($app->urlFor('movies'));
+});
 
 $app->get('/hello/:name/', function ($name) use ($app) {
     //echo "Hello, $name";

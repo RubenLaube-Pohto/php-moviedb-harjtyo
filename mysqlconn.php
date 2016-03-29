@@ -48,7 +48,20 @@ class MySQLConnection implements iDatabaseConnection {
     }
 
     public function addMovie($movie) {
-
+        $sql = "INSERT INTO movie (title, duration, isan, year) ".
+               "VALUE (:title, :duration, :isan, :year)";
+        $stmt = $this->db->prepare($sql);
+        $stmt->bindParam(':title', $movie->title, PDO::PARAM_STR, 100);
+        $stmt->bindParam(':year', $movie->year, PDO::PARAM_STR, 4);
+        if ($movie->duration)
+            $stmt->bindParam(':duration', $movie->duration, PDO::PARAM_INT);
+        else
+            $stmt->bindValue(':duration', NULL, PDO::PARAM_NULL);
+        if ($movie->isan)
+            $stmt->bindParam(':isan', $movie->isan, PDO::PARAM_STR, 38);
+        else
+            $stmt->bindValue(':isan', NULL, PDO::PARAM_NULL);
+        $stmt->execute();
     }
 
     public function addPerson($person) {

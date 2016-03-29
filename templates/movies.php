@@ -1,5 +1,6 @@
 <?php $this->layout('template', array('title' => 'Movies')) ?>
 
+<a href='movies/new'>Add New</a>
 <?php if ($movies): ?>
 <table>
   <tr>

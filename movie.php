@@ -11,10 +11,10 @@ class Movie {
 
     public function Movie() {
         $this->id = NULL;
-        $this->title = "";
-        $this->duration = 0;
-        $this->isan = "";
-        $this->year = "";
+        $this->title = NULL;
+        $this->duration = NULL;
+        $this->isan = NULL;
+        $this->year = NULL;
         $this->companies = array();
         $this->genres = array();
         $this->people = array();
