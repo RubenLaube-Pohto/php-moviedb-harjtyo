@@ -21,13 +21,13 @@ $app->get('/', function() use ($app) {
 
 $app->get('/movies', function() use ($app) {
     $conn = new MySQLConnection();
-	$movies = $conn->getMovies();
-	$app->render('movies', array('movies' => $movies));
+    $movies = $conn->getMovies();
+    $app->render('movies', array('movies' => $movies));
 })->name('movies'); 
 
 $app->get('/hello/:name/', function ($name) use ($app) {
     //echo "Hello, $name";
-	$app->render('hello', array('name' => $name));
+    $app->render('hello', array('name' => $name));
 });
 
 $app->run();
