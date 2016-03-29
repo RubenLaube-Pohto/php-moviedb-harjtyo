@@ -37,7 +37,7 @@ $app->post('/movies/new', function() use ($app) {
     $movie->title = $post['title'];
     $movie->year = $post['year'];
     if ($post['duration'])
-        $movie->duration = $post['duration'];
+        $movie->duration = (int)$post['duration'];
     if ($post['isan'])
         $movie->isan = $post['isan'];
     $conn->addMovie($movie);
@@ -50,9 +50,23 @@ $app->get('/movies/:id', function($id) use ($app) {
     $app->render('edit_movie', array('movie' => $movie));
 });
 
+$app->put('/movies/:id', function($id) use ($app) {
+    $conn = new MySQLConnection();
+    $put = $app->request->put();
+    $movie = new Movie();
+    $movie->id = (int)$id;
+    $movie->title = $put['title'];
+    $movie->year = $put['year'];
+    if ($put['duration'])
+        $movie->duration = (int)$put['duration'];
+    if ($put['isan'])
+        $movie->isan = $put['isan'];
+    $conn->updateMovie($movie);
+});
+
 $app->delete('/movies/:id', function($id) use ($app) {
     $conn = new MySQLConnection();
-    $movie = $conn->deleteMovie($id);
+    $conn->deleteMovie($id);
     $app->redirect($app->urlFor('movies'));
 });
 
