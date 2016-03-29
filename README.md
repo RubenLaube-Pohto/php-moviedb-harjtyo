@@ -55,7 +55,8 @@ On the school servers short tags are not enabled by default. This can be changed
 | 23.03.2016 | 1 | Work on design docs |
 | 24.03.2016 | 5 | Work on design docs |
 | 28.03.2016 | 4 | Implement classes |
-| Total hours: | 23 |  |
+| 29.03.2016 | 2 | Implement basic ability to add movies |
+| Total hours: | 25 |  |
 
 [1]: http://php.net/manual/en/ini.core.php#ini.short-open-tag
 [2]: http://stackoverflow.com/questions/742764/php-syntax-for-dereferencing-function-result
