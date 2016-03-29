@@ -1,5 +1,6 @@
 <?php $this->layout('template', array('title' => 'Edit '.$movie->title)) ?>
 
+<a href='..'>Return to movies</a>
 <form method='post'>
   <input type='text' name='title' value='<?php echo $movie->title ?>'>Title<br>
   <input type='text' name='year' value='<?php echo $movie->year ?>'>Year<br>
