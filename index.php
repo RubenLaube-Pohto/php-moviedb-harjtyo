@@ -44,35 +44,28 @@ $app->post('/movies/new', function() use ($app) {
     $app->redirect($app->urlFor('movies'));
 });
 
-$app->get('/movies/:id', function($id) use ($app) {
+$app->map('/movies/:id', function($id) use ($app) {
     $conn = new MySQLConnection();
+
+    if ($app->request->isPut()) {
+        $put = $app->request->put();
+        $movie = new Movie();
+        $movie->id = (int)$id;
+        $movie->title = $put['title'];
+        $movie->year = $put['year'];
+        if ($put['duration'])
+            $movie->duration = (int)$put['duration'];
+        if ($put['isan'])
+            $movie->isan = $put['isan'];
+        $conn->updateMovie($movie);
+    }
+    else if ($app->request->isDelete()) {
+        $conn->deleteMovie($id);
+        $app->redirect($app->urlFor('movies'));
+    }
+
     $movie = $conn->getMovie($id);
     $app->render('edit_movie', array('movie' => $movie));
-});
-
-$app->put('/movies/:id', function($id) use ($app) {
-    $conn = new MySQLConnection();
-    $put = $app->request->put();
-    $movie = new Movie();
-    $movie->id = (int)$id;
-    $movie->title = $put['title'];
-    $movie->year = $put['year'];
-    if ($put['duration'])
-        $movie->duration = (int)$put['duration'];
-    if ($put['isan'])
-        $movie->isan = $put['isan'];
-    $conn->updateMovie($movie);
-});
-
-$app->delete('/movies/:id', function($id) use ($app) {
-    $conn = new MySQLConnection();
-    $conn->deleteMovie($id);
-    $app->redirect($app->urlFor('movies'));
-});
-
-$app->get('/hello/:name/', function ($name) use ($app) {
-    //echo "Hello, $name";
-    $app->render('hello', array('name' => $name));
-});
+})->via('GET', 'PUT', 'DELETE');
 
 $app->run();
