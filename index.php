@@ -17,6 +17,12 @@ $app->view->getEngine()->addData(
     array('maincss' => $app->request->getRootUri().'/static/main.css'),
     'template'
 );
+// Set navbar links
+$app->view->getEngine()->addData(
+    array('link_movies' => $app->request->getRootUri().'/movies',
+          'link_new_movie' => $app->request->getRootUri().'/movies/new'),
+    'navbar'
+);
 
 require_once 'mysqlconn.php';
 require_once 'movie.php';
