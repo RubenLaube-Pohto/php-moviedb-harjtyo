@@ -12,6 +12,8 @@ $app->view(
         $engine->loadExtension(new Slim\Views\PlatesExtension);
     })
 );
+// Set css file to use
+$app->view->getEngine()->addData(array('maincss' => 'http://student.labranet.jamk.fi/~H8871/www/palvelinohjelmointi/php-moviedb-harjtyo/static/main.css'), 'template');
 
 require_once 'mysqlconn.php';
 require_once 'movie.php';
