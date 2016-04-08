@@ -12,6 +12,7 @@ $app->view(
         $engine->loadExtension(new Slim\Views\PlatesExtension);
     })
 );
+// getEngine() returns the Plates engine
 // Set css file to use
 $app->view->getEngine()->addData(
     array('maincss' => $app->request->getRootUri().'/static/main.css'),
@@ -20,14 +21,17 @@ $app->view->getEngine()->addData(
 // Set navbar links
 $app->view->getEngine()->addData(
     array('link_movies' => $app->request->getRootUri().'/movies',
-          'link_new_movie' => $app->request->getRootUri().'/movies/new'),
+          'link_new_movie' => $app->request->getRootUri().'/movies/new',
+          'link_people' => $app->request->getRootUri().'/people'),
     'navbar'
 );
 
 require_once 'mysqlconn.php';
 require_once 'movie.php';
+require_once 'person.php';
 
 $app->get('/', function() use ($app) {
+    // TODO: Add landing page
     $app->redirect($app->urlFor('movies'));
 });
 
@@ -78,5 +82,15 @@ $app->map('/movies/:id', function($id) use ($app) {
     $movie = $conn->getMovie($id);
     $app->render('edit_movie', array('movie' => $movie));
 })->via('GET', 'PUT', 'DELETE');
+
+$app->get('/people', function() use ($app) {
+    $conn = new MySQLConnection();
+    $people = $conn->getPeople();
+    $app->render('people', array('people' => $people));
+})->name('people');
+
+$app->map('/people/:id', function($id) use ($app) {
+    // TODO: Display edit for person
+})->via('GET');
 
 $app->run();

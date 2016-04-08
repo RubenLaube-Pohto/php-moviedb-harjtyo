@@ -1,6 +1,7 @@
 <?php
 require_once 'idbconn.php';
 require_once 'movie.php';
+require_once 'person.php';
 
 class MySQLConnection implements iDatabaseConnection {
 
@@ -54,8 +55,22 @@ class MySQLConnection implements iDatabaseConnection {
         return $movies;
     }
 
-    public function getPeople($person_ids) {
-
+    public function getPeople($person_ids=NULL) {
+        if (is_null($person_ids)) {
+            $sql = "SELECT person.id, person.firstname, person.lastname, ".
+                       "person.birthday ".
+                   "FROM person";
+            $stmt = $this->db->query($sql);
+            while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
+                $person = new Person();
+                $person->id = $row['id'];
+                $person->firstname = $row['firstname'];
+                $person->lastname = $row['lastname'];
+                $person->birthday = $row['birthday'];
+                $people[] = $person;
+            }
+        }
+        return $people;
     }
 
     public function addMovie($movie) {
@@ -109,6 +124,7 @@ class MySQLConnection implements iDatabaseConnection {
     public function deleteMovie($movie_id) {
         $sql = "DELETE FROM movie WHERE id='$movie_id'";
         $this->db->exec($sql);
+        // TODO: Remove links from many to many tables
     }
 
     public function deletePerson($person_id) {
