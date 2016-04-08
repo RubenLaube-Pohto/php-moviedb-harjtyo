@@ -24,6 +24,10 @@ The design documentation is to be very detailed as an end of course project for 
 - [slim/plates](https://packagist.org/packages/slim/plates) 1.0.2
 - [Plates](http://platesphp.com/) 3.1.1
 
+## Installation
+
+Install required packages with [Composer](https://getcomposer.org/).
+
 ## Issues
 
 Issues that have come up while working on the project.
@@ -54,6 +58,10 @@ Many browsers don't support PUT or DELETE requests. The functionality can be pro
 		OR
         <input type="hidden" name="_METHOD" value="DELETE">
 
+### Eloquent ORM
+
+It would have been nice to try the Eloquent ORM from Laravel with Slim [[3]] but the PHP version was too low.
+
 ## Spent Time
 
 | Date | Hours | Tasks |
@@ -65,7 +73,9 @@ Many browsers don't support PUT or DELETE requests. The functionality can be pro
 | 24.03.2016 | 5 | Work on design docs |
 | 28.03.2016 | 4 | Implement classes |
 | 29.03.2016 | 4 | Implement basic functionality |
-| Total hours: | 27 |  |
+| 08.04.2016 | 4 | Add navigation, implement list people |
+| Total hours: | 31 |  |
 
 [1]: http://php.net/manual/en/ini.core.php#ini.short-open-tag
 [2]: http://stackoverflow.com/questions/742764/php-syntax-for-dereferencing-function-result
+[3]: https://packagist.org/packages/illuminate/database
