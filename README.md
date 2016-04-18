@@ -1,12 +1,18 @@
 # Movie DB Interface in PHP
 
 Available at: http://student.labranet.jamk.fi/~H8871/www/palvelinohjelmointi/php-moviedb-harjtyo  
-phpDocumentor generated API: http://student.labranet.jamk.fi/~H8871/www/palvelinohjelmointi/api
+phpDocumentor generated API: http://student.labranet.jamk.fi/~H8871/www/palvelinohjelmointi/api  
+These links may go down at any time after the end of course.
 
 [Introduction](#introduction)  
 [Requirements](#requirements)  
 [Issues](#issues)  
-[Closing Report](#closing-report)  
+[Closing Report](#closing-report)
+- [Design Documentation](#design-documentation)
+- [What Was Implemented](#what-was-implemented)
+- [What Was Left Out](#what-was-left-out)
+- [What Was Learned](#what-was-learned)
+- [Self-evaluation](#self-evaluation)
 [Spent Time](#spent-time)  
 
 ## Introduction
@@ -71,7 +77,7 @@ It would have been nice to try out the Eloquent ORM from Laravel with Slim [[3]]
 
 ### Problems with VPN
 
-On the final weekend before finishing the project the VPN connection to school servers decided to oddly break. It was possible to reach one of the usually available drives but not the other. Last lines of the code had to be writen over SSH with Vim because it was the only way to reach the files.
+On the final weekend before finishing the project the VPN connection to school servers decided to oddly break. It was possible to reach one of the usually available drives but not the other. Last lines of the code had to be writen over SSH with Vim because it was the only way to reach the files. PS: Later FTP was used to get to the files. It was not as good as a working VPN but good enough.
 
 ## Closing Report
 
@@ -85,6 +91,10 @@ Model:
 ![model](docs/model.png)  
 Classes:  
 ![classes](docs/classes.png)  
+Listing sequence-diagram:  
+![sequence-list](docs/sequence_lists.png)  
+Movie related methods sequence-diagram (pretty much the same for person):  
+![sequence-list](docs/sequence_movie.png)  
 
 ### What Was Implemented
 
@@ -105,9 +115,15 @@ Classes:
 - Managing database connection in php
 - PHPDoc syntax and document generation
 
+Slim was very easy and lightweight to use. It was perfect for a small project like this one as creating a new Slim-project didn't add the myriad of folders that come with bigger frameworks like Laravel and Yii. The user is free to create the directory structure they want and maybe to learn more as things are more bare bones.
+
+It was simple to manage the routes and implement different request methods, including PUT and DELETE by using a hidden field in forms. This made the site / application structure clear and implementing it RESTfully was pretty intuitive.
+
 ### Self-evaluation
 
-It was fun to work with the technologies and I realy liked to see everything working together. Unfortunately I didn't find the subject of a movie database that interesting so I spent much more time reading documentation of the frameworks and implementing new things rather than trying to get the basic interface working as well as possible. As an after thougth I might have enjoyed more making a report on some part of the technologies used but I didn't think of it until much later.
+It was fun to work with the technologies and I realy liked to see everything working together. Unfortunately I didn't find the subject of a movie database that interesting so I spent much more time reading the documentation of the frameworks and implementing new things rather than trying to get the basic interface working as well as possible. As an after thougth I might have enjoyed more making a report on some part of the technologies used but I didn't think of it until much later. I also think I should have used a little bit more time with this project overall.
+
+The documentation is pretty ok in my opinion. Having more classes and a more comlex structure for the program would make documents more valuable. They do, however, display the usage of different UML diagrams. For the programming part, using all the technologies suggest some level of knowledge about the subject. Too bad the total ammount of functionality is rather low. For myself I would suggest a grade of 2/5 for the "WWW Server Programming" course and 3.5/5 for "Software Design" course.
 
 ## Spent Time
 
@@ -121,10 +137,9 @@ It was fun to work with the technologies and I realy liked to see everything wor
 | 28.03.2016 | 4 | Implement classes |
 | 29.03.2016 | 4 | Implement basic functionality |
 | 08.04.2016 | 4 | Add navigation, implement list people |
-| 15. - 18.04.2016 | 15 | Finish application and comment source code |
-| Total hours: | 46 |  |
-
-TODO: Add sequence-diagram, write more to closing report about the techs used.
+| 15. - 17.04.2016 | 15 | Finish application and comment source code |
+| 18.04.2016 | 2 | Presentation and final touches to the documentation |
+| Total hours: | 48 |  |
 
 [1]: http://php.net/manual/en/ini.core.php#ini.short-open-tag
 [2]: http://stackoverflow.com/questions/742764/php-syntax-for-dereferencing-function-result
