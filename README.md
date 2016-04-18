@@ -7,12 +7,13 @@ These links may go down at any time after the end of course.
 [Introduction](#introduction)  
 [Requirements](#requirements)  
 [Issues](#issues)  
-[Closing Report](#closing-report)
+[Closing Report](#closing-report)  
 - [Design Documentation](#design-documentation)
 - [What Was Implemented](#what-was-implemented)
 - [What Was Left Out](#what-was-left-out)
 - [What Was Learned](#what-was-learned)
 - [Self-evaluation](#self-evaluation)
+
 [Spent Time](#spent-time)  
 
 ## Introduction
