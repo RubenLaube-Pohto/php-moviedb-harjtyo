@@ -1,4 +1,7 @@
 <?php
+/**
+ * Interface that defines public database methods.
+ */
 interface iDatabaseConnection {
     public function getMovie($movie_id);
     public function getPerson($person_id);

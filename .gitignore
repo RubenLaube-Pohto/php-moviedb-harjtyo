@@ -1,4 +1,5 @@
 .htaccess
 dbconf.php
 composer.*
+*.phar
 /vendor/

@@ -1,10 +1,12 @@
 # Movie DB Interface in PHP
 
 Available at: http://student.labranet.jamk.fi/~H8871/www/palvelinohjelmointi/php-moviedb-harjtyo
+phpDocumentor generated API: http://student.labranet.jamk.fi/~H8871/www/palvelinohjelmointi/api
 
 [Introduction](#introduction)  
 [Requirements](#requirements)  
 [Issues](#issues)  
+[Closing Report](#closing-report)  
 [Spent Time](#spent-time)  
 
 ## Introduction
@@ -23,6 +25,11 @@ The design documentation is to be very detailed as an end of course project for 
 - [Slim](http://www.slimframework.com/) 2.6.2
 - [slim/plates](https://packagist.org/packages/slim/plates) 1.0.2
 - [Plates](http://platesphp.com/) 3.1.1
+
+Other technologies used:
+
+- [Kendo UI](http://www.telerik.com/kendo-ui)
+- [phpDocumentor](https://www.phpdoc.org/)
 
 ## Installation
 
@@ -60,7 +67,40 @@ Many browsers don't support PUT or DELETE requests. The functionality can be pro
 
 ### Eloquent ORM
 
-It would have been nice to try the Eloquent ORM from Laravel with Slim [[3]] but the PHP version was too low.
+It would have been nice to try out the Eloquent ORM from Laravel with Slim [[3]] but the PHP version was too low.
+
+### Problems with VPN
+
+On the final weekend before finishing the project the VPN connection to school servers decided to oddly break. It was possible to reach one of the usually available drives but not the other. Last lines of the code had to be writen over SSH with Vim because it was the only way to reach the files.
+
+## Closing Report
+
+### Design Documentation
+
+Add screenshots.
+
+### What Was Implemented
+
+- Basic CRUD for movies and people
+
+### What Was Left Out
+
+- Comlex relations that exist in the database
+- User authentication
+
+### What Was Learned
+
+- Designing helps to get a grasp of what needs to be done
+- REST, at least to an extent
+- Use of a php framework
+- Use of templates
+- Use of a HTML UI framework
+- Managing database connection in php
+- PHPDoc syntax and document generation
+
+### Self-evaluation
+
+It was fun to work with the technologies and I realy liked to see everything working together. Unfortunately I didn't find the subject of a movie database that interesting so I spent much more time reading documentation of the frameworks and implementing new things rather than trying to get the basic interface working as well as possible. As an after thougth I might have enjoyed more making a report on some part of the technologies used but I didn't think of it until much later.
 
 ## Spent Time
 
@@ -74,7 +114,8 @@ It would have been nice to try the Eloquent ORM from Laravel with Slim [[3]] but
 | 28.03.2016 | 4 | Implement classes |
 | 29.03.2016 | 4 | Implement basic functionality |
 | 08.04.2016 | 4 | Add navigation, implement list people |
-| Total hours: | 31 |  |
+| 15. - 18.04.2016 | 15 | Finish application and comment source code |
+| Total hours: | 46 |  |
 
 [1]: http://php.net/manual/en/ini.core.php#ini.short-open-tag
 [2]: http://stackoverflow.com/questions/742764/php-syntax-for-dereferencing-function-result
