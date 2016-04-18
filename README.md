@@ -77,7 +77,12 @@ On the final weekend before finishing the project the VPN connection to school s
 
 ### Design Documentation
 
-Add screenshots.
+Use case:  
+![use-case](docs/use-case.png)  
+Model:  
+![model](docs/model.png)  
+Classes:  
+![classes](docs/classes.png)  
 
 ### What Was Implemented
 
@@ -85,7 +90,7 @@ Add screenshots.
 
 ### What Was Left Out
 
-- Comlex relations that exist in the database
+- Complex relations that exist in the database
 - User authentication
 
 ### What Was Learned
