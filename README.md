@@ -79,6 +79,8 @@ On the final weekend before finishing the project the VPN connection to school s
 
 Use case:  
 ![use-case](docs/use-case.png)  
+Architecture:  
+![architecture](docs/architecture.png)  
 Model:  
 ![model](docs/model.png)  
 Classes:  
@@ -121,6 +123,8 @@ It was fun to work with the technologies and I realy liked to see everything wor
 | 08.04.2016 | 4 | Add navigation, implement list people |
 | 15. - 18.04.2016 | 15 | Finish application and comment source code |
 | Total hours: | 46 |  |
+
+TODO: Add sequence-diagram, write more to closing report about the techs used.
 
 [1]: http://php.net/manual/en/ini.core.php#ini.short-open-tag
 [2]: http://stackoverflow.com/questions/742764/php-syntax-for-dereferencing-function-result
